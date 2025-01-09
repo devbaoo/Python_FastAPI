@@ -102,3 +102,6 @@ async def delete_book(id: int = Path(gt=0)):
 async def filter_books_by_published_date(published_date: int):
     filtered_books = [book for book in BOOKS if book['published_date'] == published_date]
     return filtered_books
+
+@app.get("/books/filter-by-published_date-range/")
+async  def 
