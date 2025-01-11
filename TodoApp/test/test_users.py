@@ -50,6 +50,6 @@ def test_change_password_wrong_password(test_user):
 
 
 def test_change_phone_number(test_user):
-   responses = client.patch("/user/change_phone?phone=2222222222")
+   responses = client.patch("/user/change_phone?phone_number=2222222222")
    assert responses.status_code == status.HTTP_200_OK
    assert responses.json()['message'] == 'Change phone succesfull'

@@ -12,21 +12,29 @@ app.dependency_overrides[get_current_user] = override_get_current_user
 
 
 def test_get_all_authenticated(test_todo):
-   responses = client.get("/todo")
-   assert responses.status_code == status.HTTP_200_OK
-   assert responses.json() == [{'complete': False,
-                                'description': 'Learn FastAPI from the basics',
-                                'id': 1, 'owner_id': 1, 'priority': 1,
-                                'title': 'Learn FastAPI'}]
+    responses = client.get("/todo")
+    assert responses.status_code == status.HTTP_200_OK
+    assert responses.json() == [{
+        "id": 1,
+        "priority": 5,
+        "owner_id": 1,
+        "complete": False,
+        "title": "Learn to code!",
+        "description": "Need to learn everyday!"
+    }]
 
 
 def test_get_one_authenticated(test_todo):
-   responses = client.get("/todo/1")
-   assert responses.status_code == status.HTTP_200_OK
-   assert responses.json() == {'complete': False,
-                                'description': 'Learn FastAPI from the basics',
-                                'id': 1, 'owner_id': 1, 'priority': 1,
-                                'title': 'Learn FastAPI'}
+    responses = client.get("/todo/1")
+    assert responses.status_code == status.HTTP_200_OK
+    assert responses.json() == {
+        "id": 1,
+        "priority": 5,
+        "owner_id": 1,
+        "complete": False,
+        "title": "Learn to code!",
+        "description": "Need to learn everyday!"
+    }
 
 
 def test_read_one_authenticated_not_found():
