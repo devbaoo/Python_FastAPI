@@ -1,0 +1,27 @@
+{% include 'layout.html' %}
+
+
+  <div class="container">
+    <div class = "card">
+      <div class = card-header>
+        Login
+      </div>
+      <div class = card-body>
+        <form id = "loginForm">
+            <div class = "form-group">
+              <label for = "username">Username</label>
+              <input type = "text" class = "form-control" id = "username" name = "username" placeholder = "Enter username" autocomplete="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="current-password" required >
+            </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <div class = "card-footer text-muted">
+            <a href="/auth/regis-page"> Register?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
